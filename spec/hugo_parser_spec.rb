@@ -14,4 +14,10 @@ describe HugoParser do
       expect(date).to eq "2011-04-21"
     end
   end
+  context "given a date format" do
+    it "parses to a RFC3339 format" do
+      dateTime = HugoParser.parse("2011-Apr-21 19:45:03 -0500")
+      expect(dateTime).to eq "2011-04-21T19:45:03-05:00"
+    end
+  end
 end
