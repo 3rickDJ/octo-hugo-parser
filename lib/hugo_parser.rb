@@ -30,4 +30,11 @@ class HugoParser
     date+time+utc
   end
 
+  def self.parse_author(key_value)
+    name_val = key_value.split(' ', 2)[1]
+    <<~TEXTO
+    author:
+      name: #{name_val}
+    TEXTO
+  end
 end
