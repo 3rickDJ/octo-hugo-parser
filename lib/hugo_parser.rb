@@ -37,4 +37,9 @@ class HugoParser
       name: #{name_val}
     TEXTO
   end
+
+  def self.parse_date_yml(key_value)
+    name_val = key_value.split(' ', 2)[1]
+    "date: #{parse_full_date(name_val)}"
+  end
 end
