@@ -8,4 +8,10 @@ describe HugoParser do
       expect(utc).to eq "-0500"
     end
   end
+  context "given a date in a format yyyy-Mon-dd" do
+    it "parses to a format only made by numbers" do
+      date = HugoParser.parse_date "2011-Apr-21"
+      expect(date).to eq "2011-04-21"
+    end
+  end
 end
