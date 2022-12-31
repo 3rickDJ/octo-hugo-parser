@@ -31,4 +31,11 @@ describe HugoParser do
       expect(key_value).to eq output
     end
   end
+  context "given a semicolon separated key-value (A->B)" do
+    it "parses key-value with a new date format" do
+      key_value = HugoParser.parse_date_yml "date: 2011-Apr-21 19:45:03 -0500"
+      output = "date: 2011-04-21T19:45:03-05:00"
+      expect(key_value).to eq output
+    end
+  end
 end
