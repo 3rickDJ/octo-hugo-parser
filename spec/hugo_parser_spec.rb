@@ -20,4 +20,15 @@ describe HugoParser do
       expect(dateTime).to eq "2011-04-21T19:45:03-05:00"
     end
   end
+
+  context "given a semicolon separated key-value (A->B)" do
+    it "parses with a new intermediate key (A->C->B)" do
+      key_value = HugoParser.parse_author "author: José Juan Reyes Zuñiga"
+      output = <<~EOT
+      author:
+        name: José Juan Reyes Zuñiga
+      EOT
+      expect(key_value).to eq output
+    end
+  end
 end
