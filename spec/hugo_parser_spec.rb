@@ -23,7 +23,7 @@ describe HugoParser do
 
   context "given a semicolon separated key-value (A->B)" do
     it "parses with a new intermediate key (A->C->B)" do
-      key_value = HugoParser.parse_author "author: José Juan Reyes Zuñiga"
+      key_value = HugoParser.parse_author_yml "author: José Juan Reyes Zuñiga"
       output = <<~EOT
       author:
         name: José Juan Reyes Zuñiga
