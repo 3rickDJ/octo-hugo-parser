@@ -22,7 +22,7 @@ class HugoParser
     date.gsub(month,@@month[month])
   end
 
-  def self.parse(full_date)
+  def self.parse_full_date(full_date)
     date, time, utc = split(full_date)
     date = parse_date(date)
     time = 'T'+time
