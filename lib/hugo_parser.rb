@@ -21,4 +21,13 @@ class HugoParser
     month = date.scan(/[A-Z][a-z]{2}/).pop
     date.gsub(month,@@month[month])
   end
+
+  def self.parse(full_date)
+    date, time, utc = split(full_date)
+    date = parse_date(date)
+    time = 'T'+time
+    utc.insert 3, ':'
+    date+time+utc
+  end
+
 end
