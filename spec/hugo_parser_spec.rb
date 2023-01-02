@@ -61,7 +61,7 @@ describe HugoParser do
       ---
       layout: post
       title: "Podcast 0 de la temporada 0"
-      date: 2011-04-21T19:45:03-0500
+      date: 2011-04-21T19:45:03-05:00
       author:
         name: José Juan Reyes Zuñiga
       comments: true
