@@ -38,4 +38,12 @@ describe HugoParser do
       expect(key_value).to eq output
     end
   end
+  context "given a octopress markdown file" do
+    it "extracts the frontmatter" do
+      post = File.readlines('spec/post.md')
+      frontmatter = HugoParser.read_frontmatter post
+      output = post[0..8].join
+      expect(frontmatter).to eq output
+    end
+  end
 end
