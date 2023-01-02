@@ -49,8 +49,8 @@ class HugoParser
     text[a..b].join
   end
 
-  def self.parse_frontmatter(text)
-    read_frontmatter(text).split("\n").collect do |n|
+  def self.parse_frontmatter(frontmatter)
+    frontmatter.split("\n").collect do |n|
       if n.match? "date: "
         parse_date_yml n
       elsif n.match? "author: "
