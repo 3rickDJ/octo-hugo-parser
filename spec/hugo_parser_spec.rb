@@ -54,5 +54,21 @@ describe HugoParser do
       EOT
       expect(frontmatter).to eq output
     end
+    it "parses the date and author in the frontmatter" do
+      post = File.readlines('spec/post.md')
+      frontmatter = HugoParser.parse_frontmatter(post)
+      output = <<~EOT
+      ---
+      layout: post
+      title: "Podcast 0 de la temporada 0"
+      date: 2011-04-21T19:45:03-0500
+      author:
+        name: José Juan Reyes Zuñiga
+      comments: true
+      categories:
+      ---
+      EOT
+      expect(frontmatter).to eq output
+    end
   end
 end
