@@ -48,4 +48,16 @@ class HugoParser
     a ,b = a[1], b[1]
     text[a..b].join
   end
+
+  def self.parse_frontmatter(text)
+    read_frontmatter(text).split("\n").collect do |n|
+      if n.match? "date: "
+        parse_date_yml n
+      elsif n.match? "author: "
+        parse_author_yml n
+      else
+        n
+      end
+    end.join("\n")
+  end
 end
