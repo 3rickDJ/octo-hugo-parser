@@ -42,7 +42,16 @@ describe HugoParser do
     it "extracts the frontmatter" do
       post = File.readlines('spec/post.md')
       frontmatter = HugoParser.read_frontmatter post
-      output = post[0..8].join
+      output = <<~EOT
+      ---
+      layout: post
+      title: "Podcast 0 de la temporada 0"
+      date: 2011-Apr-21 19:45:03 -0500
+      author: José Juan Reyes Zuñiga
+      comments: true
+      categories:
+      ---
+      EOT
       expect(frontmatter).to eq output
     end
   end
