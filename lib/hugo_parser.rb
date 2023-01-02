@@ -42,4 +42,10 @@ class HugoParser
     name_val = key_value.split(' ', 2)[1]
     "date: #{parse_full_date(name_val)}"
   end
+
+  def self.read_frontmatter(text)
+    a, b = text.each_with_index.find_all{|n,ind| n.include?("---")}.first(2)
+    a ,b = a[1], b[1]
+    text[a..b].join
+  end
 end
