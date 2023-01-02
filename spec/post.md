@@ -2,8 +2,7 @@
 layout: post
 title: "Podcast 0 de la temporada 0"
 date: 2011-Apr-21 19:45:03 -0500
-author:
-  name: José Juan Reyes Zuñiga
+author: José Juan Reyes Zuñiga
 comments: true
 categories:
 ---
