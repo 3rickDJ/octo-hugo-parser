@@ -57,7 +57,7 @@ describe HugoParser do
     it "parses the date and author in the frontmatter" do
       post = File.readlines('spec/post.md')
       frontmatter = HugoParser.parse_frontmatter(post)
-      output = <<~EOT
+      output = <<~EOT.chomp
       ---
       layout: post
       title: "Podcast 0 de la temporada 0"
