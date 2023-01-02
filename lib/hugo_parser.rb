@@ -32,7 +32,7 @@ class HugoParser
 
   def self.parse_author_yml(key_value)
     name_val = key_value.split(' ', 2)[1]
-    <<~TEXTO
+    <<~TEXTO.chomp
     author:
       name: #{name_val}
     TEXTO
