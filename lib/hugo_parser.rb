@@ -58,6 +58,6 @@ class HugoParser
       else
         n
       end
-    end.join("\n")
+    end.join("\n") + "\n"
   end
 end
