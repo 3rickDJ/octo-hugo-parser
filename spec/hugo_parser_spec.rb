@@ -58,7 +58,7 @@ describe HugoParser do
       post = File.readlines('spec/post.md')
       frontmatter = HugoParser.read_frontmatter(post)
       frontmatter = HugoParser.parse_frontmatter(frontmatter)
-      output = <<~EOT.chomp
+      output = <<~EOT
       ---
       layout: post
       title: "Podcast 0 de la temporada 0"
