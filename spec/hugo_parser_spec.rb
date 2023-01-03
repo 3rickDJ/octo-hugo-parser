@@ -71,5 +71,10 @@ describe HugoParser do
       EOT
       expect(frontmatter).to eq output
     end
+    it "parses the file from the entire file" do
+      hugo_post = HugoParser.parse_octo_file('spec/post.md')
+      output = File.read('spec/post_hugo.md')
+      expect(hugo_post).to eq output
+    end
   end
 end
