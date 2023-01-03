@@ -60,4 +60,13 @@ class HugoParser
       end
     end.join("\n") + "\n"
   end
+
+  def self.parse_octo_file(octo_post)
+    octo_post = File.readlines(octo_post)
+    a, b = octo_post.each_with_index.find_all{|n,ind| n.include?("---")}.first(2)
+    a ,b = a[1], b[1]
+    frontmatter = parse_frontmatter(octo_post[a..b].join)
+    body = octo_post[(b+1)..-1].join("")
+    frontmatter + body
+  end
 end
