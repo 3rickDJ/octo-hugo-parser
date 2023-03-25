@@ -70,3 +70,14 @@ class HugoParser
     frontmatter + body
   end
 end
+
+# Give filenames as arguments and parse every octopress_post to a hugo_post
+if $0 == __FILE__
+  ARGV.each do |f|
+    post = HugoParser.parse_octo_file(f)
+    f = f.sub ".markdown", ".md"
+    file = File.open( f, "w" )
+    file.write(post)
+    file.close
+  end
+end
